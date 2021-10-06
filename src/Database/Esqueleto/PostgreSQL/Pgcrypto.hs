@@ -38,6 +38,7 @@ data HashAlgorithm
 when using `toCrypt`, such as using `filterLogger` on `monad-logger` based stacks is highly advised.
 
 example:
+
 @
 share
     [mkPersist sqlSettings]
@@ -78,6 +79,7 @@ toCrypt algorithm pass =
 /Requires/ the pgcrypto module.
 
 example:
+
 @
 share
     [mkPersist sqlSettings]
