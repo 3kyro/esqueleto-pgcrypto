@@ -2,8 +2,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 
 -- | This module contains functions specific to the [pgcrypto](https://www.postgresql.org/docs/current/pgcrypto.html) module
---
--- @since: 3.5.1
 
 module Database.Esqueleto.PostgreSQL.Pgcrypto
     (HashAlgorithm(..),
@@ -24,7 +22,6 @@ an invalid iteration count, which will lead to an sql error.
 
 /Requires/ the pgcrypto module.
 
-@since 3.5.1
 -}
 data HashAlgorithm
     = BF (Maybe Word)
@@ -58,7 +55,6 @@ insertSelect $ do
             <&> toCrypt (BF Nothing) "1234password"
 @
 
--- @since 3.5.1
 -}
 toCrypt :: SqlString s => HashAlgorithm -> s -> SqlExpr (Value s)
 toCrypt algorithm pass =
@@ -100,7 +96,6 @@ login name pwd = select $ do
     pure user
 @
 
--- @since 3.5.1
 -}
 fromCrypt :: SqlString s => SqlExpr (Value s) -> s -> SqlExpr (Value Bool)
 fromCrypt expr pass =
