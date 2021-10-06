@@ -37,3 +37,10 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - esqueleto-pgcrypto
+    - QuickCheck
+    - hspec
+    - persistent
+    - persistent-postgresql
+    - monad-logger
+    - transformers
+    - unliftio
