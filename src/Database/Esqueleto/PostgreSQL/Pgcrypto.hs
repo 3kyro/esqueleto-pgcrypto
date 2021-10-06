@@ -13,7 +13,7 @@ import qualified Data.Text.Internal.Builder as TLB
 import Database.Esqueleto.Experimental (toPersistValue)
 import Database.Esqueleto.Internal.Internal
 
-{- pgcrypto hashing algorithms
+{- | pgcrypto hashing algorithms
 see: https://www.postgresql.org/docs/current/pgcrypto.html
 
 `bf` and `xdes` algorithms have an optional iterations count parameter. All limitations and considerations
