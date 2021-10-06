@@ -1,6 +1,31 @@
 # esqueleto-pgcrypto
 
+Esqueleto support for the pgcrypto PostgreSQL module        
 
+````haskell
+share
+    [mkPersist sqlSettings]
+    [persistLowerCase|
+    UserAccount json
+        name T.Text
+        UniqueName name
+        passwordHash T.Text
+        deriving Show Read Eq
+
+-- insert a `PersistField` using pgcrypto's `crypt` function for password hashing
+insertUserAccount = insertSelect $ 
+    pure $
+        UserAccount
+            <# val "username"
+            <&> toCrypt (BF Nothing) "1234password"
+
+login name pwd = select $ do
+    user <- from $ Table UserAccount
+    where_ $ user ^. UserAccountName ==. val name
+        &&. fromCrypt (user ^. UserAccountPasswordHash) pwd
+    pure user
+
+````
 
 ## Tests
 
