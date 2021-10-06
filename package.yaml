@@ -5,6 +5,8 @@ license:             BSD3
 author:              "Kyriakos Papachrysanthou"
 maintainer:          "papachrysanthou.k@gmail.com"
 copyright:           "2021 Kyriakos Papachrysanthou"
+category:            "Database"
+synopsis:            "Esqueleto support for the pgcrypto PostgreSQL module"
 
 extra-source-files:
 - README.md

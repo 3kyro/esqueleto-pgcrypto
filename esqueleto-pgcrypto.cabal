@@ -6,7 +6,9 @@ cabal-version: 1.12
 
 name:           esqueleto-pgcrypto
 version:        0.1.0.0
+synopsis:       Esqueleto support for the pgcrypto PostgreSQL module
 description:    Please see the README on GitHub at <https://github.com/3kyro/esqueleto-pgcrypto#readme>
+category:       Database
 homepage:       https://github.com/3kyro/esqueleto-pgcrypto#readme
 bug-reports:    https://github.com/3kyro/esqueleto-pgcrypto/issues
 author:         Kyriakos Papachrysanthou
